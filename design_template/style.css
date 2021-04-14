@@ -4,7 +4,7 @@ body {
     background-color: #272727;
 }
 
-/* Terminal */
+/* Terminal general layout */
 .terminal {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,8 @@ body {
     height: 100vh;
 }
 
-.terminal__menu, .terminal__screen {
+.terminal__menu,
+.terminal__screen {
     width: 100vw;
 }
 
@@ -20,9 +21,32 @@ body {
     height: 4%;
     background-color: #bbb;
     border-radius: 15px 15px 0 0;
+    display: flex;
+    align-items: center;
 }
 
 .terminal__screen {
     background-color: #151515;
     height: 96%;
+}
+
+/* Inside Terminal elements */
+.terminal__button {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    margin-left: 10px;
+    background-color: green;
+}
+
+.terminal__button--red {
+    background-color: #ff3b47;
+}
+
+.terminal__button--yellow {
+    background-color: #ffc100;
+}
+
+.terminal__button--green {
+    background-color: #00d742;
 }
