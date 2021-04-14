@@ -47,6 +47,7 @@ body {
 
 .terminal__button--green {
     background-color: #00d742;
+    border-color: #049931;
 }
 
 /* TERMINAL SCREEN */
