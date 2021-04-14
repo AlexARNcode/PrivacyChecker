@@ -47,7 +47,6 @@ body {
 
 .terminal__button--green {
     background-color: #00d742;
-<<<<<<< HEAD
 }
 
 /* TERMINAL SCREEN */
@@ -72,7 +71,4 @@ body {
     display: block;
     font-size: 1em;
     padding: 0.5em;
-=======
-    border-color: #049931;
->>>>>>> top-left-buttons
 }
