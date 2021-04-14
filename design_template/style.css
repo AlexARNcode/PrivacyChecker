@@ -4,7 +4,7 @@ body {
     background-color: #272727;
 }
 
-/* Terminal general layout */
+/* TERMINAL */
 .terminal {
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@ body {
     width: 100vw;
 }
 
+/* TERMINAL TOP MENU */
 .terminal__menu {
     height: 4%;
     background-color: #bbb;
@@ -25,12 +26,6 @@ body {
     align-items: center;
 }
 
-.terminal__screen {
-    background-color: #151515;
-    height: 96%;
-}
-
-/* Inside Terminal elements */
 .terminal__button {
     border-radius: 50%;
     width: 1em;
@@ -49,4 +44,22 @@ body {
 
 .terminal__button--green {
     background-color: #00d742;
+}
+
+/* TERMINAL SCREEN */
+.terminal__screen {
+    background-color: #151515;
+    height: 96%;
+}
+
+.terminal__maintext{
+    font-family: monospace;
+    color: green;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 0.8em;
+}
+
+.terminal__maintext--result {
+    color: rgb(0, 109, 128);
 }
