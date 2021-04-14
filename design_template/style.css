@@ -1,0 +1,28 @@
+/* Body reset */
+body {
+    margin: 0;
+    background-color: #272727;
+}
+
+/* Terminal */
+.terminal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.terminal__menu, .terminal__screen {
+    width: 100vw;
+}
+
+.terminal__menu {
+    height: 4%;
+    background-color: #bbb;
+    border-radius: 15px 15px 0 0;
+}
+
+.terminal__screen {
+    background-color: #151515;
+    height: 96%;
+}
