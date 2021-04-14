@@ -37,16 +37,20 @@ body {
     height: 1em;
     margin-left: 10px;
     background-color: green;
+    border: 1px solid;
 }
 
 .terminal__button--red {
     background-color: #ff3b47;
+    border-color: #9d252b;
 }
 
 .terminal__button--yellow {
     background-color: #ffc100;
+    border-color: #9d802c;
 }
 
 .terminal__button--green {
     background-color: #00d742;
+    border-color: #049931;
 }
