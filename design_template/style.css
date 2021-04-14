@@ -52,14 +52,29 @@ body {
 
 /* TERMINAL SCREEN */
 .terminal__screen {
-    background-color: #151515;
+
+    background-color: #151515; 
     height: 96%;
     padding-top: 1em;
 }
 
+.terminal__screen::before {
+    content: "";
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png');
+    opacity: 0.05;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
 .terminal__maintext{
     font-family: monospace;
-    color: green;
+    color: #690;
     text-align: center;
     font-size: 1.2em;
     padding: 0.5em;
