@@ -36,6 +36,12 @@ function getISP()
     return gethostbyaddr($_SERVER['REMOTE_ADDR']);
 }
 
+function getIspName()
+{
+    return geoip_isp_by_name($_SERVER['REMOTE_ADDR']);
+    
+}
+
 function getCity()
 {
 }
@@ -66,3 +72,5 @@ echo '<br>';
 echo '$ Last page visited is: ' . getLastPage();
 echo '<br>';
 echo '$ Your ISP is: ' . getISP();
+echo '<br>';
+echo '$ Your ISP name is: ';
