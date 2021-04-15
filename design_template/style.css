@@ -25,6 +25,7 @@ body {
     border-radius: 15px 15px 0 0;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .terminal__button {
@@ -61,7 +62,7 @@ body {
 .terminal__screen {
     background-color: #151515; 
     height: 96%;
-    padding-top: 1em;
+    padding-top: 3vh;
 }
 
 .terminal__screen::before {
@@ -72,10 +73,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 1vh;
+    right: 2vw;
     bottom: 0px;
-    left: 0px;
+    left: 2vw;
 }
 
 .terminal__maintext{
