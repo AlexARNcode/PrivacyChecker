@@ -13,6 +13,15 @@
 - Résolution d'écran de l'utilisateur
 */
 
+/* 
+    ISP Hostnames :
+    __ Orange : lfbn-cle-1-798-117.w92-171.abo.wanadoo.fr  / lfbn-bor-1-817-98.w86-234.abo.wanadoo.fr
+    __ Free : 91-162-88-86.subs.proxad.net
+    __ Bouygues :
+    __ SFT : 
+*/
+
+
 function getIp()
 {
     //whether ip is from share internet
@@ -33,25 +42,27 @@ function getIp()
 
 function getISP()
 {
-    return gethostbyaddr($_SERVER['REMOTE_ADDR']);
+    $isp = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+    $ispName = getIspName($isp);
+
+    return $ispName;
 }
 
-function getIspName()
+function getIspName($isp)
 {
-    return geoip_isp_by_name($_SERVER['REMOTE_ADDR']);
-    
-}
+    $ispName = '';
 
-function getCity()
-{
-}
+    if (strpos($isp, 'proxad')) {
+        $ispName = 'Free (' . $isp . ')';
+    }
+    else if (strpos($isp, 'wanadoo')) {
+        $ispName = 'Orange (' . $isp . ')';
+    }
+    else {
+        $ispName = $isp;
+    }
 
-function getCountry()
-{
-}
-
-function getOS()
-{
+    return $ispName;
 }
 
 function getLastPage()
@@ -59,18 +70,14 @@ function getLastPage()
     return $_SERVER['HTTP_REFERER'];
 }
 
-function getLocalTime()
-{
-}
 
-function getScreenResolution()
-{
-}
+
 
 echo '$ Your IP address is: ' . getIp();
 echo '<br>';
 echo '$ Last page visited is: ' . getLastPage();
 echo '<br>';
-echo '$ Your ISP is: ' . getISP();
-echo '<br>';
-echo '$ Your ISP name is: ';
+echo '$ Your ISP is : ' . getISP();
+
+
+ 

@@ -9,7 +9,7 @@ Le tout sera présenté sous forme d'un terminal de commande de type macOS, pour
 L'idée générale est de sensibiliser l'utilisateur à cette thématique de façon pédagogique, en lui montrant des informations concrètes, et en lui proposant des solutions.
 
 ## Données à récupérer et afficher sur l'utilisateur
-- Adresse IPv4
+- Adresse IPv4 (utilisation de MaxMind GeoIP)
 - Adresse IPv6 (optionnel)
 - Nom du FAI
 - Ville correspondant à l'utilisateur
