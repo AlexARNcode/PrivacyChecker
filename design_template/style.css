@@ -2,6 +2,7 @@
 body {
     margin: 0;
     background-color: #272727;
+    font-family: monospace;
 }
 
 /* TERMINAL */
@@ -50,9 +51,14 @@ body {
     border-color: #049931;
 }
 
+.terminal__title {
+    position: absolute;
+    color: rgb(95, 95, 95);
+    left: 30vw;
+}
+
 /* TERMINAL SCREEN */
 .terminal__screen {
-
     background-color: #151515; 
     height: 96%;
     padding-top: 1em;
@@ -60,8 +66,8 @@ body {
 
 .terminal__screen::before {
     content: "";
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png');
-    opacity: 0.05;
+    background-image: url('./img/anonymous_bg.png');
+    opacity: 0.1;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,8 +79,7 @@ body {
 }
 
 .terminal__maintext{
-    font-family: monospace;
-    color: #690;
+    color: rgb(130, 195, 0);
     text-align: center;
     font-size: 1.2em;
     padding: 0.5em;
@@ -83,7 +88,7 @@ body {
 }
 
 .terminal__maintext--result {
-    color: rgb(0, 109, 128);
+    color: rgb(0, 157, 185);
     display: block;
     font-size: 1em;
     padding: 0.5em;
