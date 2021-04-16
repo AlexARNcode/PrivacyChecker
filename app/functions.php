@@ -1,11 +1,11 @@
 <?php
 
 /* 
-- Adresse IPv4
+- Adresse IPv4 OK
 - Adresse IPv6 (optionnel)
 - Nom du FAI
-- Ville correspondant à l'utilisateur
-- Pays correspondant à l'utilisateur
+- Ville correspondant à l'utilisateur (v2)
+- Pays correspondant à l'utilisateur  (v2)
 - Navigateur de l'utilisateur
 - OS de l'utilisateur
 - Page visitée avant la page actuelle
@@ -23,7 +23,7 @@
 */
 
 
-function getIp()
+function getIpAddress()
 {
     //whether ip is from share internet
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -74,10 +74,14 @@ function getLastPage()
     return $_SERVER['HTTP_REFERER'];
 }
 
+function getBrowser() {
+    $browser = get_browser(null, true);
+    return $browser;
+}
 
 
 
-echo '$ Your IP address is: ' . getIp();
+echo '$ Your IP address is: ' . getIpAddress();
 // echo '<br>';
 // echo '$ Last page visited is: ' . getLastPage();
 // echo '<br>';
@@ -85,5 +89,5 @@ echo '$ Your IP address is: ' . getIp();
 echo '<br><br>';
 echo "Coucou mon coupaing/ma coupingue bêta-testeur(euse), voici l'info dont j'ai besoin : <strong>" . getISP() . '</strong>';
 
-
- 
+echo '<br><br>';
+echo "$ Your web browser is: " . $_SERVER['HTTP_USER_AGENT'];
