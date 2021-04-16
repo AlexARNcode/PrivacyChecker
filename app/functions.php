@@ -18,7 +18,8 @@
     __ Orange : lfbn-cle-1-798-117.w92-171.abo.wanadoo.fr  / lfbn-bor-1-817-98.w86-234.abo.wanadoo.fr
     __ Free : 91-162-88-86.subs.proxad.net
     __ Bouygues :
-    __ SFT : 
+    __ Bouygues B&YOU 4G : 80.214.157.199
+    __ SFR : 140.19.23.93.rev.sfr.net / 212.145.17.109.rev.sfr.net
 */
 
 
@@ -58,6 +59,9 @@ function getIspName($isp)
     else if (strpos($isp, 'wanadoo')) {
         $ispName = 'Orange (' . $isp . ')';
     }
+    else if (strpos($isp, 'sfr') || (strpos($isp, 'numericable'))) {
+        $ispName = 'SFR / RED (' . $isp . ')';
+    }
     else {
         $ispName = $isp;
     }
@@ -74,10 +78,12 @@ function getLastPage()
 
 
 echo '$ Your IP address is: ' . getIp();
-echo '<br>';
-echo '$ Last page visited is: ' . getLastPage();
-echo '<br>';
-echo '$ Your ISP is : ' . getISP();
+// echo '<br>';
+// echo '$ Last page visited is: ' . getLastPage();
+// echo '<br>';
+// echo '$ Your ISP is : <strong>' . getISP() . '</strong>';
+echo '<br><br>';
+echo "Coucou mon coupaing/ma coupingue bêta-testeur(euse), voici l'info dont j'ai besoin : <strong>" . getISP() . '</strong>';
 
 
  
