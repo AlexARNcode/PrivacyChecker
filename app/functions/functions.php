@@ -94,7 +94,7 @@ function getOS() {
 	$userAgent = $_SERVER['HTTP_USER_AGENT'];
 	$osName =   '';
     
-    require __DIR__ . '/data/osData.php';
+    require __DIR__ . '/../data/osData.php';
 
 	foreach ($osArray as $regex => $value) { 
 		if (preg_match($regex, $userAgent) ) {
@@ -104,17 +104,3 @@ function getOS() {
 
 	return $osName;
 }
-
-echo '$ Your IP address is: ' . getIpAddress();
-
-echo '<br><br>';
-echo "$ Your ISP is : <strong>" . getISP() . '</strong>';
-
-echo '<br><br>';
-echo "$ Your web browser is: " . getBrowser();
-
-echo '<br><br>';
-echo "$ Your browser languages setting is: " . getLang();
-
-echo '<br><br>';
-echo "$ Your OS is: " . getOS();

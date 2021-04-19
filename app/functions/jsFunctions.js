@@ -1,11 +1,13 @@
 // Get client local time in EN format;
+const localTime = 'Unknown';
+
 function getLocalTime() {
-    const localTime = new Date().toLocaleTimeString("en-US");
+    localTime = new Date().toLocaleTimeString("en-US");
 
     return localTime;
 }
 
-console.log(localTime);
+
 
 // Get client screen resolution
 function getScreenResolution() {
