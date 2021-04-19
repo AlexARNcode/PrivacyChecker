@@ -84,7 +84,7 @@ require_once('./functions/functions.php');
 
             <p class="terminal__maintext">
                 $ Your screen resolution is :
-                <span class="terminal__maintext terminal__maintext--result">
+                <span class="terminal__maintext terminal__maintext--result screen-resolution">
                     Work In Progress
                 </span>
             </p>

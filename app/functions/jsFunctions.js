@@ -1,24 +1,23 @@
-// Get client local time in EN format;
-const localTime = 'Unknown';
+const app = {
+    init: function () {
+        // Get client local date and time and display it
+        app.getLocalTime();
+        // Get client screen resolution and display it
+        app.getScreenResolution();
+    },
 
-function getLocalTime() {
-    localTime = new Date().toLocaleTimeString("en-US");
+    getLocalTime: function () {
+        localTime = new Date().toLocaleString("fr-FR");
 
-    return localTime;
-}
+        document.querySelector('.localtime').innerHTML = localTime;
+    },
 
+    getScreenResolution: function () {
+        const screenWidth = screen.width;
+        const screenHeight = screen.height;
 
-
-// Get client screen resolution
-function getScreenResolution() {
-    const screenWidth = screen.width;
-    const screenHeight = screen.height;
-
-    resolutionArr = {
-        'width' : screenWidth,
-        'height' : screenHeight,
+        document.querySelector('.screen-resolution').innerHTML = screenWidth + "*" + screenHeight;
     }
-    return resolutionArr;
 }
 
-console.log(getScreenResolution());
+document.addEventListener('DOMContentLoaded', app.init);
