@@ -1,12 +1,13 @@
 <?php
 
 /* 
-- Adresse IPv4 OK
+- Adresse IPv4 : OK
 - Adresse IPv6 (optionnel)
 - Nom du FAI
 - Ville correspondant à l'utilisateur (v2)
 - Pays correspondant à l'utilisateur  (v2)
-- Navigateur de l'utilisateur
+- Navigateur de l'utilisateur : OK
+- Langue du client :
 - OS de l'utilisateur
 - Page visitée avant la page actuelle
 - Horloge de l'ordinateur de l'utilisateur
@@ -81,6 +82,12 @@ function getBrowser() {
     return $agent;
 }
 
+function getLang() {
+    $langPreference = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+
+    return $langPreference;
+}
+
 
 echo '$ Your IP address is: ' . getIpAddress();
 
@@ -89,3 +96,6 @@ echo "$ Your ISP is : <strong>" . getISP() . '</strong>';
 
 echo '<br><br>';
 echo "$ Your web browser is: " . getBrowser() . '<br>';
+
+echo '<br><br>';
+echo "$ Your browser languages setting is: " . getLang();
