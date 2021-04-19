@@ -75,19 +75,27 @@ function getLastPage()
 }
 
 function getBrowser() {
-    $browser = get_browser(null, true);
-    return $browser;
+    $browserList = ['Firefox', 'Opera', 'Chrome','Safari', 'Edg', 'MSIE', 'Trident'];
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+   
+    $userBrowser = '';
+
+    foreach ($browserList as $browser) {
+        if (strpos($agent, $browser)) {
+            $userBrowser = $browser;
+        }
+    }
+
+    return $userBrowser;
 }
 
 
-
 echo '$ Your IP address is: ' . getIpAddress();
-// echo '<br>';
-// echo '$ Last page visited is: ' . getLastPage();
-// echo '<br>';
-// echo '$ Your ISP is : <strong>' . getISP() . '</strong>';
-echo '<br><br>';
-echo "Coucou mon coupaing/ma coupingue bêta-testeur(euse), voici l'info dont j'ai besoin : <strong>" . getISP() . '</strong>';
 
 echo '<br><br>';
-echo "$ Your web browser is: " . $_SERVER['HTTP_USER_AGENT'];
+echo "$ Your ISP is : <strong>" . getISP() . '</strong>';
+
+echo '<br><br>';
+echo "$ Your web browser is: " . getBrowser() . '<br>';
+
+getBrowser();
