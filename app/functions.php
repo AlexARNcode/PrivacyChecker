@@ -7,7 +7,7 @@
 - Ville correspondant à l'utilisateur (v2)
 - Pays correspondant à l'utilisateur  (v2)
 - Navigateur de l'utilisateur : OK
-- Langue du client :
+- Langue du client : OK
 - OS de l'utilisateur
 - Page visitée avant la page actuelle
 - Horloge de l'ordinateur de l'utilisateur
@@ -88,6 +88,22 @@ function getLang() {
     return $langPreference;
 }
 
+function getOS() { 
+    // Get the User Agent of the browser and search the OS inside, then translate it to a plain English name with a regex (preg_match)
+    // See /data/osData.php to see the translation array.
+	$userAgent = $_SERVER['HTTP_USER_AGENT'];
+	$osName =   '';
+    
+    require __DIR__ . '/data/osData.php';
+
+	foreach ($osArray as $regex => $value) { 
+		if (preg_match($regex, $userAgent) ) {
+			$osName = $value;
+		}
+	}   
+
+	return $osName;
+}
 
 echo '$ Your IP address is: ' . getIpAddress();
 
@@ -95,7 +111,10 @@ echo '<br><br>';
 echo "$ Your ISP is : <strong>" . getISP() . '</strong>';
 
 echo '<br><br>';
-echo "$ Your web browser is: " . getBrowser() . '<br>';
+echo "$ Your web browser is: " . getBrowser();
 
 echo '<br><br>';
 echo "$ Your browser languages setting is: " . getLang();
+
+echo '<br><br>';
+echo "$ Your OS is: " . getOS();
