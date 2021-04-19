@@ -75,18 +75,10 @@ function getLastPage()
 }
 
 function getBrowser() {
-    $browserList = ['Firefox', 'Opera', 'Chrome','Safari', 'Edg', 'MSIE', 'Trident'];
+
     $agent = $_SERVER['HTTP_USER_AGENT'];
-   
-    $userBrowser = '';
 
-    foreach ($browserList as $browser) {
-        if (strpos($agent, $browser)) {
-            $userBrowser = $browser;
-        }
-    }
-
-    return $userBrowser;
+    return $agent;
 }
 
 
@@ -97,5 +89,3 @@ echo "$ Your ISP is : <strong>" . getISP() . '</strong>';
 
 echo '<br><br>';
 echo "$ Your web browser is: " . getBrowser() . '<br>';
-
-getBrowser();
