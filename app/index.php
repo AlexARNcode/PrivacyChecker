@@ -28,14 +28,14 @@ require_once('./functions/functions.php');
         <div class="terminal__screen">
             <p class="terminal__maintext">
                 $ Your IP address is:
-                <span class="terminal__maintext terminal__maintext--result">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--1">
                     <?= getIpAddress(); ?>
                 </span>
             </p>
 
             <p class="terminal__maintext">
                 $ Your ISP is :
-                <span class="terminal__maintext terminal__maintext--result">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--2">
                     <?= getISP(); ?>
                 </span>
             </p>
@@ -56,14 +56,14 @@ require_once('./functions/functions.php');
  -->
             <p class="terminal__maintext">
                 $ Your OS is :
-                <span class="terminal__maintext terminal__maintext--result">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
                     <?= getOS(); ?>
                 </span>
             </p>
 
             <p class="terminal__maintext">
                 $ Your web browser is :
-                <span class="terminal__maintext terminal__maintext--result">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--4">
                     <?= getBrowser(); ?>
                 </span>
             </p>
@@ -77,14 +77,14 @@ require_once('./functions/functions.php');
 
             <p class="terminal__maintext">
                 $ Your local time is :
-                <span class="terminal__maintext terminal__maintext--result localtime">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--5 localtime">
                     Work In Progress
                 </span>
             </p>
 
             <p class="terminal__maintext">
                 $ Your screen resolution is :
-                <span class="terminal__maintext terminal__maintext--result screen-resolution">
+                <span class="terminal__maintext terminal__maintext--result terminal__maintext--6 screen-resolution">
                     Work In Progress
                 </span>
             </p>

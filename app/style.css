@@ -60,7 +60,7 @@ body {
 
 /* TERMINAL SCREEN */
 .terminal__screen {
-    background-color: #151515; 
+    background-color: #151515;
     height: 96%;
     padding-top: 3vh;
 }
@@ -79,13 +79,15 @@ body {
     left: 2vw;
 }
 
-.terminal__maintext{
+.terminal__maintext {
     color: rgb(130, 195, 0);
     text-align: center;
     font-size: 1.2em;
     padding: 0.5em;
     margin-bottom: 0;
     margin-top: 0;
+
+    animation: displayTitles 2s;
 }
 
 .terminal__maintext--result {
@@ -93,4 +95,49 @@ body {
     display: block;
     font-size: 1em;
     padding: 0.5em;
+}
+
+/* ANIMATIONS */
+.terminal__maintext--1 {
+    animation: displayResults 3s ease-in-out;
+}
+
+.terminal__maintext--2 {
+    animation: displayResults 4s ease-in-out;
+}
+
+.terminal__maintext--3 {
+    animation: displayResults 5s ease-in-out;
+}
+
+.terminal__maintext--4 {
+    animation: displayResults 6s ease-in-out;
+}
+
+.terminal__maintext--5 {
+    animation: displayResults 7s ease-in-out;
+}
+
+.terminal__maintext--6 {
+    animation: displayResults 8s ease-in-out;
+}
+
+@keyframes displayResults {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes displayTitles {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
