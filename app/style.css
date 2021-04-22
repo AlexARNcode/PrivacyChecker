@@ -141,3 +141,15 @@ body {
         opacity: 100%;
     }
 }
+
+/* RESPONSIVE */
+/* Desktops */
+@media only screen and (min-width: 768px) {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .terminal, .terminal__menu, .terminal__scren {
+        width: 80vw;
+    }
+}
