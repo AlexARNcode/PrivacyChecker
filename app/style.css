@@ -149,7 +149,11 @@ body {
         display: flex;
         justify-content: center;
     }
-    .terminal, .terminal__menu, .terminal__scren {
+    .terminal, .terminal__menu, .terminal__screen {
         width: 80vw;
+    }
+
+    .terminal__screen::before  {
+        background-size: contain;
     }
 }
