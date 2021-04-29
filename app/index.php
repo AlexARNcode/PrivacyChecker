@@ -7,7 +7,7 @@ $reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
 
 // Replace "city" with the appropriate method for your database, e.g.,
 // "country".
-$record = $reader->city('91.162.88.86');
+$record = $reader->city(getIpAddress());
 
 print($record->country->isoCode . "\n"); // 'US'
 print($record->country->name . "\n"); // 'United States'
