@@ -1,5 +1,2 @@
 {
-    "require": {
-        "geoip2/geoip2": "^2.11"
-    }
 }
