@@ -1,6 +1,33 @@
 <?php
 require_once('./functions/functions.php');
+require_once '../vendor/autoload.php';
+use GeoIp2\Database\Reader;
+
+$reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
+
+// Replace "city" with the appropriate method for your database, e.g.,
+// "country".
+$record = $reader->city(getIpAddress());
+
+/*
+print($record->country->isoCode . "\n"); // 'US'
+print($record->country->name . "\n"); // 'United States'
+print($record->country->names['zh-CN'] . "\n"); // '美国'
+
+print($record->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
+print($record->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
+
+print($record->city->name . "\n"); // 'Minneapolis'
+
+print($record->postal->code . "\n"); // '55455'
+
+print($record->location->latitude . "\n"); // 44.9733
+print($record->location->longitude . "\n"); // -93.2323
+
+print($record->traits->network . "\n"); // '128.101.101.101/32' */
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,20 +65,21 @@ require_once('./functions/functions.php');
                         <?= getISP(); ?>
                     </span>
                 </p>
-                <!-- <p class="terminal__maintext">
+
+                <p class="terminal__maintext">
                     $ Your country is :
                     <span class="terminal__maintext terminal__maintext--result">
-                        France
-                    </span>
-                </p> -->
-        
-         <!--            <p class="terminal__maintext">
-                    $ Your city is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        Paris
+                    <?= $record->country->name ?>
                     </span>
                 </p>
-         -->
+        
+                <p class="terminal__maintext">
+                    $ Your city is :
+                    <span class="terminal__maintext terminal__maintext--result">
+                    <?= $record->city->name ?>
+                    </span>
+                </p>
+         
                 <p class="terminal__maintext">
                     $ Your OS is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
@@ -64,12 +92,14 @@ require_once('./functions/functions.php');
                         <?= getBrowser(); ?>
                     </span>
                 </p>
-                <!-- <p class="terminal__maintext">
-                    $ You visited this page before :
+
+                <p class="terminal__maintext">
+                    $ You latitude/longitude is :
                     <span class="terminal__maintext terminal__maintext--result">
-                        http://www.google.fr
+                    <?= $record->location->latitude . ' / ' . $record->location->longitude ?>
                     </span>
-                </p> -->
+                </p>
+
                 <p class="terminal__maintext">
                     $ Your local time is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--5 localtime">
