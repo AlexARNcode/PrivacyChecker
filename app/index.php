@@ -1,6 +1,7 @@
 <?php
-require_once('./functions/functions.php');
+require_once './functions/functions.php';
 require_once '../vendor/autoload.php';
+
 use GeoIp2\Database\Reader;
 
 $reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
@@ -9,25 +10,7 @@ $reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
 // "country".
 $record = $reader->city(getIpAddress());
 
-/*
-print($record->country->isoCode . "\n"); // 'US'
-print($record->country->name . "\n"); // 'United States'
-print($record->country->names['zh-CN'] . "\n"); // '美国'
-
-print($record->mostSpecificSubdivision->name . "\n"); // 'Minnesota'
-print($record->mostSpecificSubdivision->isoCode . "\n"); // 'MN'
-
-print($record->city->name . "\n"); // 'Minneapolis'
-
-print($record->postal->code . "\n"); // '55455'
-
-print($record->location->latitude . "\n"); // 44.9733
-print($record->location->longitude . "\n"); // -93.2323
-
-print($record->traits->network . "\n"); // '128.101.101.101/32' */
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -69,17 +52,32 @@ print($record->traits->network . "\n"); // '128.101.101.101/32' */
                 <p class="terminal__maintext">
                     $ Your country is :
                     <span class="terminal__maintext terminal__maintext--result">
-                    <?= $record->country->name ?>
+                        <?= $record->country->name ?>
                     </span>
                 </p>
-        
+
                 <p class="terminal__maintext">
                     $ Your city is :
                     <span class="terminal__maintext terminal__maintext--result">
-                    <?= $record->city->name ?>
+                        <?= $record->city->name ?>
                     </span>
                 </p>
-         
+
+                <p class="terminal__maintext">
+                    $ You latitude/longitude is :
+                    <span class="terminal__maintext terminal__maintext--result">
+                        <?= $record->location->latitude . ' / ' . $record->location->longitude ?>
+                    </span>
+                </p>
+
+                <p class="terminal__maintext">
+                    $ You region is :
+                    <span class="terminal__maintext terminal__maintext--result">
+                        <?= $record->mostSpecificSubdivision->name ?>
+                    </span>
+                </p>
+
+
                 <p class="terminal__maintext">
                     $ Your OS is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
@@ -90,13 +88,6 @@ print($record->traits->network . "\n"); // '128.101.101.101/32' */
                     $ Your web browser is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--4">
                         <?= getBrowser(); ?>
-                    </span>
-                </p>
-
-                <p class="terminal__maintext">
-                    $ You latitude/longitude is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                    <?= $record->location->latitude . ' / ' . $record->location->longitude ?>
                     </span>
                 </p>
 
