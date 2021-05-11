@@ -172,3 +172,9 @@ body {
         background-size: contain;
     }
 }
+
+/* MAP */
+#mapContainer {
+    margin: auto;
+    border: 1px solid white;
+}

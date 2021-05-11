@@ -19,6 +19,8 @@ $record = $reader->city(getIpAddress());
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="./style.css">
     <title>PrivacyCheck</title>
 </head>
@@ -77,6 +79,10 @@ $record = $reader->city(getIpAddress());
                     </span>
                 </p>
 
+                <!-- BETA: Map feature -->
+                <div style="width: 640px; height: 480px" id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
+                <!-- End of BETA: Map Feature -->
+
 
                 <p class="terminal__maintext">
                     $ Your OS is :
@@ -107,6 +113,7 @@ $record = $reader->city(getIpAddress());
         </section>
     </div>
     <script src="./functions/jsFunctions.js"></script>
+    <script src="./functions/map.js"></script>
 </body>
 
 </html>
