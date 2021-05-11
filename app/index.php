@@ -80,7 +80,7 @@ $record = $reader->city(getIpAddress());
                 </p>
 
                 <!-- BETA: Map feature -->
-                <div style="width: 640px; height: 480px" id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
+                <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
                 <!-- End of BETA: Map Feature -->
 
 
