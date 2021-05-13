@@ -37,6 +37,7 @@ $record = $reader->city(getIpAddress());
                 <div class="terminal__title">./Privacy_Checker.sh</div>
             </div>
             <!-- TERMINAL SCREEN -->
+            <!-- Network Information -->
             <div class="terminal__screen">
                 <p class="terminal__maintext">
                     $ Your IP address is:
@@ -44,6 +45,7 @@ $record = $reader->city(getIpAddress());
                         <?= getIpAddress(); ?>
                     </span>
                 </p>
+
                 <p class="terminal__maintext">
                     $ Your ISP is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--2">
@@ -51,10 +53,25 @@ $record = $reader->city(getIpAddress());
                     </span>
                 </p>
 
+                <!-- Localization information -->
                 <p class="terminal__maintext">
                     $ Your country is :
                     <span class="terminal__maintext terminal__maintext--result">
                         <?= $record->country->name ?>
+                    </span>
+                </p>
+
+                <p class="terminal__maintext">
+                    $ Your region is :
+                    <span class="terminal__maintext terminal__maintext--result">
+                        <?= $record->mostSpecificSubdivision->name ?>
+                    </span>
+                </p>
+
+                <p class="terminal__maintext">
+                    $ Your postal code is :
+                    <span class="terminal__maintext terminal__maintext--result">
+                        <?= $record->postal->code ?>
                     </span>
                 </p>
 
@@ -79,11 +96,11 @@ $record = $reader->city(getIpAddress());
                     </span>
                 </p>
 
-                <!-- BETA: Map feature -->
+                <!-- Map of user localization -->
                 <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
-                <!-- End of BETA: Map Feature -->
 
 
+                <!-- Local machine info -->
                 <p class="terminal__maintext">
                     $ Your OS is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
