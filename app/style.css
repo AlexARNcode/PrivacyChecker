@@ -5,6 +5,12 @@ body {
     font-family: monospace;
 }
 
+/* TITLES */
+h2 {
+    color: #fff;
+    text-align: center;
+}
+
 /* TERMINAL */
 .terminal {
     display: flex;

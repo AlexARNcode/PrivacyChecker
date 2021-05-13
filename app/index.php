@@ -37,8 +37,9 @@ $record = $reader->city(getIpAddress());
                 <div class="terminal__title">./Privacy_Checker.sh</div>
             </div>
             <!-- TERMINAL SCREEN -->
-            <!-- Network Information -->
             <div class="terminal__screen">
+            <!-- Network Information -->
+            <h2>[*] Network Information</h2>
                 <p class="terminal__maintext">
                     $ Your IP address is:
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--1">
@@ -54,6 +55,7 @@ $record = $reader->city(getIpAddress());
                 </p>
 
                 <!-- Localization information -->
+                <h2>[*] Localization Information</h2>
                 <p class="terminal__maintext">
                     $ Your country is :
                     <span class="terminal__maintext terminal__maintext--result">
@@ -101,6 +103,7 @@ $record = $reader->city(getIpAddress());
 
 
                 <!-- Local machine info -->
+                <h2>[*] Local machine information</h2>
                 <p class="terminal__maintext">
                     $ Your OS is :
                     <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
