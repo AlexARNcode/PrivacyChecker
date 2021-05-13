@@ -90,7 +90,7 @@ $record = $reader->city(getIpAddress());
                 </p>
 
                 <p class="terminal__maintext">
-                    $ You region is :
+                    $ You're probably somewhere around here :
                     <span class="terminal__maintext terminal__maintext--result">
                         <?= $record->mostSpecificSubdivision->name ?>
                     </span>
