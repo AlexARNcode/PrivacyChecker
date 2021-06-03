@@ -1,12 +1,8 @@
 /* GENERAL */
 body {
     height: 100vh;
-/*    background: #000d22;
-    background: linear-gradient(#0f3f59, #000d22);  */
-
     background: rgb(15,63,89);
     background: radial-gradient(circle at top, #0f3f59 5%, #0f3f59 5%, #000d22 90%); 
-    
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
@@ -58,7 +54,7 @@ h2 {
     padding: 0.3em 0.8em 0.3em 0.8em;
 }
 
-
+/* INFO BOX */
 .info-box__title {
     width: 100%;
     background-color: hsl(212deg 93% 5%);
@@ -68,8 +64,16 @@ h2 {
     font-weight: 400;
 }
 
-.info-box__title::before {
+.info-box__title--network::before {
     content: url('../img/rss.png');
+}
+
+.info-box__title--localization::before {
+    content: url('../img/localization.png');
+}
+
+.info-box__title--machine::before {
+    content: url('../img/pc-monitor.png');
 }
 
 .info-box__exit {
