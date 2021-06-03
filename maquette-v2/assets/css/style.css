@@ -48,6 +48,9 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: hsl(212deg 93% 5%);
+    border-top-left-radius: 1.2em;
+    border-top-right-radius: 1.2em;
 }
 
 .info-box p {
@@ -57,7 +60,6 @@ h2 {
 /* INFO BOX */
 .info-box__title {
     width: 100%;
-    background-color: hsl(212deg 93% 5%);
     padding: 0.5em;
     border-radius: 1.2em;
     font-size: 01em;
