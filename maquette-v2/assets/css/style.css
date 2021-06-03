@@ -1,6 +1,12 @@
 /* GENERAL */
 body {
-    background: #000d22;
+    height: 100vh;
+/*    background: #000d22;
+    background: linear-gradient(#0f3f59, #000d22);  */
+
+    background: rgb(15,63,89);
+    background: radial-gradient(circle at top, #0f3f59 5%, #0f3f59 5%, #000d22 90%); 
+    
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
@@ -54,6 +60,7 @@ h2 {
 
 
 .info-box__title {
+    width: 100%;
     background-color: hsl(212deg 93% 5%);
     padding: 0.5em;
     border-radius: 1.2em;
