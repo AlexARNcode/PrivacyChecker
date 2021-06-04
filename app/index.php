@@ -5,6 +5,7 @@ require_once '../vendor/autoload.php';
 use GeoIp2\Database\Reader;
 
 /* GEO2IP2 Class Instance */
+
 $reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
 
 $record = $reader->city(getIpAddress());
@@ -97,12 +98,12 @@ $record = $reader->city(getIpAddress());
             <!-- Map -->
             <section class="info-box">
                 <div class="info-box__bar">
-                    <h2 class="info-box__title">
+                    <h2 class="info-box__title  info-box__title--localization">
                         Map
                     </h2>
                     <p class="info-box__exit">X</p>
-                    <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
                 </div>
+                <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
             </section>
 
             <!-- Local Machine Information -->

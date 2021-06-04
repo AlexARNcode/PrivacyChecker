@@ -88,6 +88,15 @@ h2 {
     color: #42def7;
 }
 
+/* MAP */
+#mapContainer {
+    width: 100%; 
+    height: 100%;
+    margin: auto;
+    border: 1px solid white;
+    opacity: 100%;
+}
+
 /* RESPONSIVE */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 1px) and (max-width: 992px) { 

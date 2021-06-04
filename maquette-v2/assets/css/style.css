@@ -87,6 +87,14 @@ h2 {
 .info-box__data {
     color: #42def7;
 }
+/* MAP */
+#mapContainer {
+    width: 40vw; 
+    height: 40vw;
+    margin: auto;
+    border: 1px solid white;
+    opacity: 100%;
+}
 
 /* RESPONSIVE */
 /* Small devices (landscape phones, 576px and up) */

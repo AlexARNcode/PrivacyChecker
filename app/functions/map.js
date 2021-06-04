@@ -1,3 +1,4 @@
+console.log('map init');
 // Initialize the platform object:
 var platform = new H.service.Platform({
     'apikey': 'N_R4nRSzpXuBQWin03_KtbZ6rphtkfkQOlqGxPVa1aQ'
