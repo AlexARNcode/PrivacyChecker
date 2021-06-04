@@ -1,11 +1,11 @@
 # PrivacyChecker
-A web app displaying your information (IP address, OS, ISP, location, etc...)
+PrivacyChecker is a website displaying personal user information (IP address, OS, ISP, location, etc...)
 
 ![PC2](https://user-images.githubusercontent.com/53975649/120770184-2e375100-c51e-11eb-9714-f0ffb4f2c97c.png)
 
 ## Installation
 
-- Clone this repo
+- Clone this repository
 - Download dependencies with composer : 
     ```shell
      composer update
