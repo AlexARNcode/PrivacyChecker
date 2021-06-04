@@ -1,7 +1,7 @@
 # PrivacyChecker
 A web app displaying your information (IP address, OS, ISP, location, etc...)
 
-![PrivacyChecker](https://user-images.githubusercontent.com/53975649/115956395-b9bfca00-a4fc-11eb-9f3c-3f22aa6ffa5a.png)
+![PC2](https://user-images.githubusercontent.com/53975649/120770184-2e375100-c51e-11eb-9714-f0ffb4f2c97c.png)
 
 ## Installation
 
