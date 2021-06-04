@@ -4,10 +4,9 @@ require_once '../vendor/autoload.php';
 
 use GeoIp2\Database\Reader;
 
+/* GEO2IP2 Class Instance */
 $reader = new Reader('./geo2ip/GeoLite2-City.mmdb');
 
-// Replace "city" with the appropriate method for your database, e.g.,
-// "country".
 $record = $reader->city(getIpAddress());
 
 ?>
@@ -19,121 +18,122 @@ $record = $reader->city(getIpAddress());
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HERE MAPS -->
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="./style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
     <title>PrivacyCheck</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- TERMINAL -->
-        <section class="terminal">
-            <!-- TERMINAL TOP MENU -->
-            <div class="terminal__menu">
-                <div class="terminal__button terminal__button--red"></div>
-                <div class="terminal__button terminal__button--yellow"></div>
-                <div class="terminal__button terminal__button--green"></div>
-                <div class="terminal__title">./Privacy_Checker.sh</div>
-            </div>
-            <!-- TERMINAL SCREEN -->
-            <div class="terminal__screen">
+    <!-- HEADER -->
+    <header class="main-header">
+        <h1>Privacy Checker</h1>
+        <img src="./assets/img/shield.png">
+        <p>Do you care about your personal data?</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+        <div id="main-wrapper">
             <!-- Network Information -->
-            <h2>[*] Network Information</h2>
-                <p class="terminal__maintext">
+            <section class="info-box">
+                <div class="info-box__bar">
+                    <h2 class="info-box__title info-box__title--network">
+                        Network Information
+                    </h2>
+                    <p class="info-box__exit">X</p>
+                </div>
+                <p>
                     $ Your IP address is:
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--1">
-                        <?= getIpAddress(); ?>
-                    </span>
+                    <span class="info-box__data"><?= getIpAddress(); ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ Your ISP is :
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--2">
-                        <?= getISP(); ?>
-                    </span>
+                <p>
+                    $ Your ISP is:
+                    <span class="info-box__data"><?= getISP(); ?></span>
                 </p>
+            </section>
 
-                <!-- Localization information -->
-                <h2>[*] Localization Information</h2>
-                <p class="terminal__maintext">
-                    $ Your country is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->country->name ?>
-                    </span>
+            <!-- Localization Information -->
+            <section class="info-box">
+                <div class="info-box__bar">
+                    <h2 class="info-box__title  info-box__title--localization">
+                        Localization Information
+                    </h2>
+                    <p class="info-box__exit">X</p>
+                </div>
+
+                <p>
+                    $ Your country is:
+                    <span class="info-box__data"><?= $record->country->name ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ Your region is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->mostSpecificSubdivision->name ?>
-                    </span>
+                <p>
+                    $ Your region is:
+                    <span class="info-box__data"><?= $record->mostSpecificSubdivision->name ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ Your postal code is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->postal->code ?>
-                    </span>
+                <p>
+                    $ Your postal code is:
+                    <span class="info-box__data"><?= $record->postal->code ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ Your city is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->city->name ?>
-                    </span>
+                <p>
+                    $ Your city is:
+                    <span class="info-box__data"><?= $record->city->name ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ You latitude/longitude is :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->location->latitude . ' / ' . $record->location->longitude ?>
-                    </span>
+                <p>
+                    $ Your latitude/longitude is:
+                    <span class="info-box__data"><?= $record->location->latitude . ' / ' . $record->location->longitude ?></span>
                 </p>
-
-                <p class="terminal__maintext">
+                <p>
                     $ You're probably somewhere around here :
-                    <span class="terminal__maintext terminal__maintext--result">
-                        <?= $record->mostSpecificSubdivision->name ?>
-                    </span>
+                    <span class="info-box__data"><?= $record->mostSpecificSubdivision->name ?></span>
                 </p>
+            </section>
 
-                <!-- Map of user localization -->
-                <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
+            <!-- Map -->
+            <section class="info-box">
+                <div class="info-box__bar">
+                    <h2 class="info-box__title">
+                        Map
+                    </h2>
+                    <p class="info-box__exit">X</p>
+                    <div id="mapContainer" data-lat="<?= $record->location->latitude ?>" data-lon="<?= $record->location->longitude ?>"></div>
+                </div>
+            </section>
 
-
-                <!-- Local machine info -->
-                <h2>[*] Local machine information</h2>
-                <p class="terminal__maintext">
-                    $ Your OS is :
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--3">
-                        <?= getOS(); ?>
-                    </span>
+            <!-- Local Machine Information -->
+            <section class="info-box">
+                <div class="info-box__bar">
+                    <h2 class="info-box__title info-box__title--machine">
+                        Local Machine Information
+                    </h2>
+                    <p class="info-box__exit">X</p>
+                </div>
+                <p>
+                    $ Your OS is:
+                    <span class="info-box__data"><?= getOS(); ?></span>
                 </p>
-                <p class="terminal__maintext">
-                    $ Your web browser is :
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--4">
-                        <?= getBrowser(); ?>
-                    </span>
+                <p>
+                    $ Your web browser is:
+                    <span class="info-box__data"><?= getBrowser(); ?></span>
                 </p>
-
-                <p class="terminal__maintext">
-                    $ Your local time is :
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--5 localtime">
-                        Work In Progress
-                    </span>
+                <p>
+                    $ Your local time is:
+                    <span class="info-box__data localtime">Work In Progress</span>
                 </p>
-                <p class="terminal__maintext">
-                    $ Your screen resolution is :
-                    <span class="terminal__maintext terminal__maintext--result terminal__maintext--6 screen-resolution">
-                        Work In Progress
-                    </span>
+                <p>
+                    $ Your screen resolution is:
+                    <span class="info-box__data screen-resolution">Work In Progress</span>
                 </p>
-            </div>
-        </section>
-    </div>
-    <script src="./functions/jsFunctions.js"></script>
-    <script src="./functions/map.js"></script>
+            </section>
+        </div>
+        <script src="./functions/jsFunctions.js"></script>
+        <script src="./functions/map.js"></script>
+    </main>
 </body>
 
 </html>
